@@ -1,23 +1,8 @@
-name: Birthday Bot
+- name: Install packages
+  run: pip install -r requirements.txt
 
-on:
-  workflow_dispatch:
+- name: Show files
+  run: ls -la
 
-jobs:
-  run:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install packages
-        run: pip install -r requirements.txt
-
-      - name: Run bot
-        run: python main.py
+- name: Run bot
+  run: python main.py
